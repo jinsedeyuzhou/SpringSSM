@@ -1,0 +1,3 @@
+com\ebrightmoon\manager\mapper\UserMapper.class
+com\ebrightmoon\manager\dao\RedisDaoImpl.class
+com\ebrightmoon\manager\dao\RedisDao.class

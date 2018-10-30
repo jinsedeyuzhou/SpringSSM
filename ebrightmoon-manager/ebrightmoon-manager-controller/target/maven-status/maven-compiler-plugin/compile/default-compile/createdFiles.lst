@@ -1,0 +1,3 @@
+com\ebrightmoon\manager\controller\UserController.class
+com\ebrightmoon\manager\realm\LoginRealm.class
+com\ebrightmoon\manager\controller\TestController.class
