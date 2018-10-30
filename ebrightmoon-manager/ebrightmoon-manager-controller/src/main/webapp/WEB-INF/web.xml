@@ -1,31 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <display-name>ebrightmoon-manager-controller</display-name>
   
-  <!--加载spring容器 -->
+ <!-- 加载spring容器 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/classes/spring/applicationContext-*.xml</param-value>
+		<param-value>classpath:spring/applicationContext-service.xml</param-value>
 	</context-param>
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
-	<!--springMVC前端控制器加载 -->
-	<servlet>
-		<servlet-name>springmvc</servlet-name>
-		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<!--contextConfigLocation配置SpringMVC加载的配置文件（配置处理器，映射器等等） 如果不配置contextConfigLocation，默认加载的是：/WEB-INF/servlet名称-servlet.xml(springmvc-servlet.xml) -->
-		<init-param>
-			<param-name>contextConfigLocation</param-name>
-			<param-value>classpath:spring/springmvc.xml</param-value>
-		</init-param>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>springmvc</servlet-name>
-		<url-pattern>/</url-pattern>
-	</servlet-mapping>
 
 
 	<!--spring为我们提供的乱码过滤器 -->
@@ -47,10 +32,28 @@
 		<filter-name>CharacterEncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+		<!--springMVC前端控制器加载 -->
+	<servlet>
+		<servlet-name>springmvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<!--contextConfigLocation配置SpringMVC加载的配置文件（配置处理器，映射器等等） 如果不配置contextConfigLocation，默认加载的是：/WEB-INF/servlet名称-servlet.xml(springmvc-servlet.xml) -->
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:spring/springmvc.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>springmvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
 
 	<!-- name要和 applicationContext.xml中的对应的bean的id一致 -->
 	<!--Shiro拦截器 shiro入口 -->
-	<filter>
+<!-- 	<filter>
 		<filter-name>shiroFilter</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
 		<init-param>
@@ -62,18 +65,16 @@
 	<filter-mapping>
 		<filter-name>shiroFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+	</filter-mapping> -->
 
 	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
 		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
   
-  <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
-    <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
-  </welcome-file-list>
+ 
 </web-app>
