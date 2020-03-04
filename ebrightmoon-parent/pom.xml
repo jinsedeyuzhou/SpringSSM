@@ -23,7 +23,7 @@
 		<shiro.version>1.4.0</shiro.version>
 		<mysql.version>8.0.11</mysql.version>
 		<c3p0.version>0.9.5.2</c3p0.version>
-		<jackson-version>2.9.7</jackson-version>
+		<jackson-version>2.10.3</jackson-version>
 		<hibernate.version>5.4.1.Final</hibernate.version>
 		<commons.io-version>2.6</commons.io-version>
 		<commons.fileupload-version>1.3.2</commons.fileupload-version>
