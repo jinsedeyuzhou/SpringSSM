@@ -25,7 +25,7 @@
 		<c3p0.version>0.9.5.2</c3p0.version>
 		<jackson-version>2.9.7</jackson-version>
 		<hibernate.version>5.4.1.Final</hibernate.version>
-		<commons.io-version>2.6</commons.io-version>
+		<commons.io-version>2.7</commons.io-version>
 		<commons.fileupload-version>1.3.2</commons.fileupload-version>
 		<commons-logging-version>1.2</commons-logging-version>
 		<jedis.version>2.9.0</jedis.version>
