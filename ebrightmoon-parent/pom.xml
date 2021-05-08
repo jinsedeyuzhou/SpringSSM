@@ -20,7 +20,7 @@
 		<mybatis.generator>1.3.5</mybatis.generator>
 		<log4j.version>1.2.17</log4j.version>
 		<aspectj.version>1.8.10</aspectj.version>
-		<shiro.version>1.4.0</shiro.version>
+		<shiro.version>1.6.0</shiro.version>
 		<mysql.version>8.0.11</mysql.version>
 		<c3p0.version>0.9.5.2</c3p0.version>
 		<jackson-version>2.9.7</jackson-version>
